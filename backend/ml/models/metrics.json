@@ -1,0 +1,65 @@
+{
+  "model_type": "RandomForest",
+  "dataset": "Kaggle Heart Disease (UCI Cleveland)",
+  "total_samples": 303,
+  "test_samples": 61,
+  "metrics": {
+    "cv_roc_auc_mean": 0.8841,
+    "cv_roc_auc_std": 0.0602,
+    "test_accuracy": 0.8525,
+    "test_precision": 0.8,
+    "test_recall": 0.9697,
+    "test_f1": 0.8767,
+    "test_roc_auc": 0.9167
+  },
+  "confusion_matrix": {
+    "true_negative": 20,
+    "false_positive": 8,
+    "false_negative": 1,
+    "true_positive": 32
+  },
+  "feature_importances": {
+    "cp": 0.17,
+    "thal": 0.129,
+    "thalach": 0.1098,
+    "oldpeak": 0.1071,
+    "ca": 0.089,
+    "chol": 0.0737,
+    "exang": 0.0714,
+    "age": 0.0685,
+    "trestbps": 0.0664,
+    "slope": 0.0611,
+    "sex": 0.0277,
+    "restecg": 0.0193,
+    "fbs": 0.0071
+  },
+  "all_benchmarks": {
+    "RandomForest": {
+      "cv_roc_auc_mean": 0.8841,
+      "cv_roc_auc_std": 0.0602,
+      "test_accuracy": 0.8525,
+      "test_precision": 0.8,
+      "test_recall": 0.9697,
+      "test_f1": 0.8767,
+      "test_roc_auc": 0.9167
+    },
+    "GradientBoosting": {
+      "cv_roc_auc_mean": 0.8388,
+      "cv_roc_auc_std": 0.0646,
+      "test_accuracy": 0.8033,
+      "test_precision": 0.8,
+      "test_recall": 0.8485,
+      "test_f1": 0.8235,
+      "test_roc_auc": 0.8842
+    },
+    "LogisticRegression": {
+      "cv_roc_auc_mean": 0.89,
+      "cv_roc_auc_std": 0.0611,
+      "test_accuracy": 0.8033,
+      "test_precision": 0.7692,
+      "test_recall": 0.9091,
+      "test_f1": 0.8333,
+      "test_roc_auc": 0.869
+    }
+  }
+}

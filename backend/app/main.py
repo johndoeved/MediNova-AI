@@ -36,6 +36,21 @@ async def health_check():
         "version": "1.0.0"
     }
 
+from app.services.ml_service import ml_service, HeartDiseasePredictionInput, HeartDiseasePredictionOutput
+
+@app.get("/api/ml/metrics")
+async def get_ml_metrics():
+    """Retrieve evaluation metrics for the trained Kaggle Heart Disease ML model"""
+    logger.info("Retrieving ML model evaluation metrics")
+    return ml_service.metrics
+
+@app.post("/api/ml/predict-heart-disease", response_model=HeartDiseasePredictionOutput)
+async def predict_heart_disease(payload: HeartDiseasePredictionInput):
+    """Predict cardiovascular risk probability using trained Random Forest ML pipeline"""
+    logger.info(f"Running ML heart disease prediction for patient age {payload.age}")
+    result = ml_service.predict(payload)
+    return result
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)

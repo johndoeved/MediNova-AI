@@ -11,7 +11,7 @@ import {
   Pill, Stethoscope, Eye, ArrowRight, Star, Cpu, Lock, Globe,
 } from "lucide-react";
 
-const ThreeHeart = dynamic(() => import("@/components/ThreeHeart"), {
+const OrganViewer = dynamic(() => import("@/components/OrganViewer"), {
   ssr: false,
   loading: () => (
     <div className="w-full h-full flex items-center justify-center">
@@ -398,7 +398,7 @@ export default function LandingPage() {
                             <Heart className="w-4 h-4 animate-pulse" />
                             Interactive 3D {activeOrgan}
                           </div>
-                          <ThreeHeart />
+                          <OrganViewer activeOrgan={activeOrgan} />
                           <div className="absolute bottom-5 left-5 z-10 glass-nav p-4 rounded-2xl shadow-sm">
                             <p className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">SpO₂</p>
                             <p className="text-xl font-extrabold text-emerald-500" style={{ fontFamily: "Outfit, sans-serif" }}>98.5%</p>
